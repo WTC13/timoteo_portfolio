@@ -1,0 +1,226 @@
+:root {
+    /* Tons de Terra e Madeira (Base) */
+    --bg: #2d1b0e;           /* Marrom profundo (ébano) */
+    --card-bg: #3d2b1f;      /* Marrom tabaco para contraste sutil */
+    
+    /* Tons de Ouro e Destaque (Acentos) */
+    --accent: #dab167;       /* Ouro envelhecido */
+    --accent-hover: #c49a52; /* Ouro mais escuro para hover */
+    
+    /* Tipografia (Leitura) */
+    --text-main: #f4e4bc;    /* Bege pergaminho (mais suave que o branco puro) */
+    --text-dim: #bda389;     /* Bronze acinzentado para textos secundários */
+    
+    /* Sombras e Bordas */
+    --border-light: rgba(218, 177, 103, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Playfair Display', serif; /* Sugiro trocar 'Inter' por uma serifada */
+    background: var(--bg); 
+    color: var(--text-main); 
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- Header e Background --- */
+header { 
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Gradiente radial centralizado para um efeito de iluminação clássica */
+    background: radial-gradient(circle, #4a2d18 0%, var(--bg) 80%);
+    padding: 20px;
+}
+
+.badge {
+    background: rgba(218, 177, 103, 0.1);
+    color: var(--accent);
+    padding: 6px 18px;
+    border-radius: 4px; /* Bordas mais quadradas transmitem seriedade */
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+header h1 { 
+    font-size: 3.5rem; 
+    margin: 24px 0; 
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+header h1 strong { 
+    color: var(--accent); 
+    font-style: italic;
+}
+
+header p { 
+    color: var(--text-dim); 
+    max-width: 650px; 
+    font-size: 1.25rem; 
+    margin: 0 auto;
+}
+
+/* --- Botões --- */
+.cta-group { 
+    margin-top: 40px; 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.btn { 
+    padding: 14px 35px; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    font-weight: 600;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.btn.primary { 
+    background: var(--accent); 
+    color: var(--bg); /* Texto escuro no fundo claro */
+}
+
+.btn.primary:hover { 
+    background: var(--accent-hover); 
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--shadow-dark);
+}
+
+.btn.secondary { 
+    border: 1px solid var(--accent); 
+    color: var(--accent); 
+}
+
+.btn.secondary:hover { 
+    background: rgba(218, 177, 103, 0.05); 
+    transform: translateY(-3px);
+}
+
+/* --- Grid de Projetos --- */
+.container { 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 100px 20px; 
+}
+
+.section-header { 
+    margin-bottom: 60px; 
+    text-align: center; 
+}
+
+.section-header h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 15px;
+    color: var(--accent);
+    font-family: 'Cinzel', serif; /* Font estilo clássico */
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 40px; 
+}
+
+.card { 
+    background: var(--card-bg); 
+    padding: 40px; 
+    border-radius: 2px; /* Visual de moldura */
+    border: 1px solid var(--border-light);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 15px 35px var(--shadow-dark);
+}
+
+.card:hover { 
+    transform: translateY(-12px); 
+    border-color: var(--accent);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.card-tag { 
+    color: var(--accent); 
+    font-size: 0.7rem; 
+    font-weight: 700; 
+    letter-spacing: 2px;
+    margin-bottom: 20px; 
+}
+
+.card h3 { 
+    font-size: 1.6rem;
+    margin-bottom: 15px; 
+    color: var(--text-main);
+}
+
+.card p { 
+    color: var(--text-dim); 
+    margin-bottom: 25px; 
+    font-size: 1rem; 
+}
+
+.card-link { 
+    color: var(--accent); 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 0.85rem;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.card-link:hover {
+    border-bottom: 1px solid var(--accent);
+}
+
+/* --- Seção Contato (Visual Nobre) --- */
+.contact-card {
+    background: linear-gradient(135deg, #50300d 0%, #2d1b0e 100%);
+    padding: 80px 40px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid var(--accent);
+    margin-top: 50px;
+}
+
+.contact-links { 
+    margin-top: 40px; 
+    display: flex; 
+    flex-direction: row; 
+    gap: 30px; 
+    justify-content: center; 
+}
+
+.contact-links a { 
+    color: var(--accent); 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    color: var(--text-main);
+}
+
+footer { 
+    text-align: center; 
+    padding: 60px; 
+    color: var(--text-dim); 
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-light);
+    letter-spacing: 1px;
+}
