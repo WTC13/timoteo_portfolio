@@ -224,3 +224,10 @@ footer {
     border-top: 1px solid var(--border-light);
     letter-spacing: 1px;
 }
+
+@media screen and (max-width: 540px){
+    .contact-links{
+        display: flex;
+        flex-direction: column;
+    }
+}
